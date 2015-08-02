@@ -1,0 +1,17 @@
+<a href="javascript:;" class="btn btn-primary pickmedia">Pick a file from media</a>
+<p id="chosen">You have not chosen any file yet!</p>
+
+<script type="text/javascript">
+   $('.pickmedia').click(function() {
+         new $.oc.mediaManager.popup({alias: 'ocmediamanager', onInsert: function(items) {
+            if(items.length != 1) {
+               alert('Choose only one file.');
+               return;
+            }
+            var item = items[0];
+            var template = "The file chosen is {{title}} and it's public url is {{publicUrl}}";
+            $("#chosen").html(Mustache.render(template, item));
+            this.hide();
+         } })
+   });
+</script>

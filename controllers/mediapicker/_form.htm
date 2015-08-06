@@ -1,0 +1,72 @@
+<?= Form::open(['class' => 'layout']) ?>
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="popup">&times;</button>
+    <h4 class="modal-title">Test</h4>
+</div>
+
+
+<?php if (!$this->fatalError): ?>
+
+<div class="modal-body">
+    <?= $form->render() ?>
+</div>
+<div class="modal-footer loading-indicator-container">
+    <button
+            type="submit"
+            data-request="onSaveTest"
+            data-hotkey="ctrl+s, cmd+s"
+            data-load-indicator="Creating Predici..."
+            class="btn btn-primary">
+        Create
+    </button>
+    <button
+            type="button"
+            data-request="onSaveTest"
+            data-request-data="close:1"
+            data-hotkey="ctrl+enter, cmd+enter"
+            data-load-indicator="Creating Predici..."
+            class="btn btn-default">
+        Create and Close
+        <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
+    </button>
+</div>
+
+<?php else: ?>
+
+<div class="modal-body">
+    <p class="flash-message static error"><?= e(trans($this->fatalError)) ?></p>
+</div>
+<div class="modal-footer">
+    <div class="form-buttons">
+        <div class="loading-indicator-container">
+            <button
+                    type="submit"
+                    data-request="onSaveTest"
+                    data-hotkey="ctrl+s, cmd+s"
+                    data-load-indicator="Creating Predici..."
+                    class="btn btn-primary">
+                Create
+            </button>
+            <button
+                    type="button"
+                    data-request="onSave"
+                    data-request-data="close:1"
+                    data-hotkey="ctrl+enter, cmd+enter"
+                    data-load-indicator="Creating Predici..."
+                    class="btn btn-default">
+                Create and Close
+            </button>
+                <span class="btn-text">
+                    or <a href="<?= Backend::url('webefficient/logos/predici') ?>">Cancel</a>
+                </span>
+        </div>
+    </div>
+</div>
+
+<?php endif ?>
+
+<div class="layout-row">
+
+</div>
+
+<?= Form::close() ?>

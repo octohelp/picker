@@ -1,0 +1,9 @@
+form: $/octohelp/picker/controllers/mediapicker/fields.yaml
+
+# Model Class name
+modelClass: Octohelp\Picker\Models\Test
+
+fields:
+    test:
+      label: Testare
+      span: left

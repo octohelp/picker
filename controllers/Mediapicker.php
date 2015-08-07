@@ -4,7 +4,6 @@ use BackendMenu;
 use Backend\Classes\Controller;
 
 /**
- * test
  * Mediapicker Back-end Controller
  */
 class Mediapicker extends Controller

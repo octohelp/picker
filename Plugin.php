@@ -9,7 +9,7 @@ class Plugin extends PluginBase
 {
 
     /**
-     * Returns information about this plugin. testtsdasfdssdasdas
+     * Returns information about this plugin.
      *
      * @return array
      */
